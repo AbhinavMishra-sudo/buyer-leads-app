@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏡 Buyer Leads App
 
-## Getting Started
+A Next.js + Prisma powered application to manage buyer leads effectively.
+This project is designed with a modular structure, type-safe validation, and database integration, making it a great foundation for real-world buyer management systems.
 
-First, run the development server:
+📌 Features
 
-```bash
+🔹 Buyer Management: Add, update, view, and organize buyer leads
+
+🔹 Prisma ORM: Type-safe database layer
+
+🔹 Zod Validation: Strong runtime + compile-time validations
+
+🔹 Modular Components: Reusable UI for forms, tables, and history
+
+🔹 API Routes: Built with Next.js app/api for clean backend logic
+
+🔹 Scalable Repo Structure: Industry-standard folder organization
+
+🔹 TypeScript First: Safer and more predictable development
+
+🛠️ Tech Stack
+
+Frontend: Next.js
+ (App Router) + React
+
+Database: PostgreSQL
+
+ORM: Prisma
+
+Validation: Zod
+
+Styling: Tailwind CSS (extend as needed)
+
+Language: TypeScript
+
+📂 Folder Structure
+buyer-leads-app/
+ ├─ app/                   # Next.js App Router
+ │   ├─ buyers/            # Buyer pages
+ │   │   ├─ new/page.tsx   # Create buyer form page
+ │   │   ├─ [id]/page.tsx  # Buyer detail page
+ │   │   └─ page.tsx       # List buyers
+ │   ├─ api/               # API routes
+ │   │   └─ buyers/route.ts
+ │   └─ layout.tsx         # Root layout
+ │
+ ├─ components/            # Reusable React components
+ │   ├─ BuyerForm.tsx
+ │   ├─ BuyerTable.tsx
+ │   └─ BuyerHistory.tsx
+ │
+ ├─ lib/                   # Prisma client
+ │   └─ prisma.ts
+ │
+ ├─ src/lib/utils/         # Utility helpers
+ │   └─ validations.ts     # Zod schemas
+ │
+ ├─ prisma/                # Prisma schema + migrations
+ │   └─ schema.prisma
+ │
+ ├─ public/                # Static assets
+ │   ├─ file.svg
+ │   ├─ globe.svg
+ │   └─ ...
+ │
+ ├─ tests/                 # Unit/Integration tests
+ │   └─ validation.test.ts
+ │
+ ├─ .env.example           # Example env vars (safe for repo)
+ ├─ .gitignore
+ ├─ README.md
+ ├─ package.json
+ ├─ tsconfig.json
+ └─ next.config.ts
+
+⚙️ Getting Started
+1. Clone the repo
+git clone https://github.com/your-username/buyer-leads-app.git
+cd buyer-leads-app
+
+2. Install dependencies
+npm install
+
+3. Setup environment variables
+
+Create a .env file (see .env.example):
+
+DATABASE_URL="postgresql://user:password@localhost:5432/buyerleads"
+
+4. Setup Prisma
+npx prisma generate
+npx prisma migrate dev --name init
+
+5. Run the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 Tests
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run unit tests with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm test
 
-## Learn More
+🚀 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deploy easily on Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+Or Dockerize (extend later).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📖 Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ Authentication (Magic Link / OAuth)
+
+ Role-based access control
+
+ Advanced filtering & search
+
+ Export leads as CSV
+
+ Unit + E2E test coverage
+
+🤝 Contributing
+
+Fork the repo
+
+Create a new branch (feat/your-feature)
+
+Commit changes with Conventional Commits
+
+Push branch & create a PR
